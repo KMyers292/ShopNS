@@ -1,5 +1,5 @@
 {
-  "name": "ecommerce_site",
+  "name": "shopns",
   "version": "1.0.0",
   "description": "mern shopping cart app",
   "main": "server.js",
@@ -9,13 +9,18 @@
     "start": "node backend/server",
     "server": "nodemon backend/server",
     "client": "npm start --prefix frontend",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "data:import": "node backend/seeder",
+    "data:destroy": "node backend/seeder -d"
   },
   "author": "Kyle Myers",
   "license": "ISC",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "dotenv": "^16.0.0",
-    "express": "^4.17.3"
+    "express": "^4.17.3",
+    "express-async-handler": "^1.2.0",
+    "mongoose": "^6.2.10"
   },
   "devDependencies": {
     "concurrently": "^7.1.0",

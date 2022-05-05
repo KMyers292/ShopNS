@@ -1,11 +1,110 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    /* font-size: 62.5%; */
+    font-family: "Poppins", sans-serif;
+    overflow-x: hidden;
+}
+
 main {
-    min-height: 80vh;
+    min-height: 87.4vh;
+}
+
+h1 {
+    font-size: 1.8rem;
+    padding: 1rem 0;
+}
+
+h2 {
+    font-size: 1.4rem;
+    padding: 0.5rem;
 }
 
 h3 {
     padding: 1rem 0;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.cartNum {
+  color: rgba(255, 255, 255, 0.531);
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.footer-link:hover {
+  color: #fff;
+}
+
+.ns-blue {
+  color: #0045B8;
+}
+
+.ns-yellow {
+  color: #FDD54E;
+}
+
+.ns-red {
+  color: #D30731;
+}
+
 .rating span {
     margin: 0.1rem
+}
+
+.navbar,
+footer {
+  background-color: #0045B8;
+  box-shadow: 0rem 0.2rem 1rem rgba(0, 0, 0);
+}
+
+.nav-brand {
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.footer-col {
+  color: #fff;
+}
+
+/* carousel */
+.carousel-item-next,
+.carousel-item-prev,
+.carousel-item.active {
+  display: flex;
+}
+.carousel-caption {
+  position: absolute;
+  top: 0;
+}
+
+.carousel-caption h2 {
+  color: #fff;
+}
+
+.carousel img {
+  height: 300px;
+  padding: 30px;
+  margin: 40px;
+  border-radius: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.carousel a {
+  margin: 0 auto;
+}
+@media (max-width: 900px) {
+  .carousel-caption h2 {
+    font-size: 2.5vw;
+  }
 }

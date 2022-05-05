@@ -1,4 +1,10 @@
+//===================================================================================================================================================================//
+//                                                               Product Mongoose Model                                                                              //
+//===================================================================================================================================================================//
+
 import mongoose from 'mongoose';
+
+//===================================================================================================================================================================//
 
 const reviewSchema = mongoose.Schema({
     name: {
@@ -12,10 +18,17 @@ const reviewSchema = mongoose.Schema({
     comment: {
         type: String,
         required: true
-    }
+    },
+    user: {
+        type: mongoose.Schema.Types.ObjectId,
+        required: true,
+        ref: 'User'
+    },
 }, {
     timestamps: true
 });
+
+//===================================================================================================================================================================//
 
 const productSchema = mongoose.Schema({
     user: {
@@ -28,10 +41,6 @@ const productSchema = mongoose.Schema({
         required: true
     },
     image: {
-        type: String,
-        required: true
-    },
-    brand: {
         type: String,
         required: true
     },
@@ -68,6 +77,7 @@ const productSchema = mongoose.Schema({
     timestamps: true
 });
 
-const Product = mongoose.model('Product', productSchema);
+//===================================================================================================================================================================//
 
+const Product = mongoose.model('Product', productSchema);
 export default Product;

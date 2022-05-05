@@ -1,4 +1,10 @@
+//===================================================================================================================================================================//
+//                                                               Order Mongoose Model                                                                                //
+//===================================================================================================================================================================//
+
 import mongoose from 'mongoose';
+
+//===================================================================================================================================================================//
 
 const orderSchema = mongoose.Schema({
     user: {
@@ -35,10 +41,15 @@ const orderSchema = mongoose.Schema({
         update_time: {type: String},
         email_address: {type: String}
     },
-    taxPrice: {
+    itemsPrice: {
         type: Number,
         required: true,
         default: 0.0
+    },
+    taxPrice: {
+        type: Number,
+        required: true,
+        default: 0.15
     },
     shippingPrice: {
         type: Number,
@@ -70,6 +81,7 @@ const orderSchema = mongoose.Schema({
     timestamps: true
 });
 
-const Order = mongoose.model('Order', orderSchema);
+//===================================================================================================================================================================//
 
+const Order = mongoose.model('Order', orderSchema);
 export default Order;

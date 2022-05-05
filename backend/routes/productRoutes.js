@@ -1,24 +1,29 @@
-import express from 'express';
-import asyncHandler from 'express-async-handler';
-import Product from '../models/productModel.js';
+//===================================================================================================================================================================//
+//                                                                      Product Routes                                                                               //
+//===================================================================================================================================================================//
 
+import express from 'express';
+import { getProducts, getProductById, deleteProduct, createProduct, updateProduct, createProductReview, deleteProductReview, getTopProducts } from '../controllers/productController.js';
+import { isLoggedIn, isAdmin } from '../middleware/authMiddleware.js';
 const router = express.Router();
 
-router.get('/', asyncHandler(async (req, res) => {
-    const products = await Product.find({});
-    res.json(products);
-}));
+//===================================================================================================================================================================//
 
-router.get('/:id', asyncHandler(async (req, res) => {
-    const product = await Product.findById(req.params.id);
+router.route('/')
+    .get(getProducts)
+    .post(isLoggedIn, isAdmin, createProduct);
 
-    if(product) {
-        res.json(product);   
-    }
-    else {
-        res.status(404);
-        throw new Error('Product Not Found');
-    }
-}));
+router.get('/top', getTopProducts);
+
+router.route('/:id')
+    .get(getProductById)
+    .delete(isLoggedIn, isAdmin, deleteProduct)
+    .put(isLoggedIn, updateProduct);
+
+router.route('/:id/reviews')
+    .post(isLoggedIn, createProductReview)
+    .delete(isLoggedIn, deleteProductReview);
+
+//===================================================================================================================================================================//
 
 export default router;

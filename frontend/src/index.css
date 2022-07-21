@@ -47,15 +47,15 @@ a {
 }
 
 .ns-blue {
-  color: #0045B8;
+  color: #4281a4;
 }
 
 .ns-yellow {
-  color: #FDD54E;
+  color: #ffbf69;
 }
 
 .ns-red {
-  color: #D30731;
+  color: #fe938c;
 }
 
 .rating span {
@@ -64,7 +64,7 @@ a {
 
 .navbar,
 footer {
-  background-color: #0045B8;
+  background-color: #4281a4;
   box-shadow: 0rem 0.2rem 1rem rgba(0, 0, 0);
 }
 
